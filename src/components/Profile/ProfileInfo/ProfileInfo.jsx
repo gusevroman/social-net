@@ -2,14 +2,17 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+    let imgSource = 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F1010079.jpg&f=1&nofb=1'
+    
     return (
         <div>
-            <div>
-                <img src='https://cdn.dribbble.com/users/103155/screenshots/2495359/hipsterova.jpg'  alt='some pictures from Internet'/>
+            <div className={s.img}>
+                <img src={imgSource} alt='some pictures from Internet' />
             </div>
-            <div className={s.descriptionBlock} >
-            </div>
+            {/* <div className={s.descriptionBlock} >
+            </div> */}
         </div>
     )
 };
