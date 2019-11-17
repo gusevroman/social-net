@@ -1,19 +1,17 @@
-import MyPosts from './MyPosts/MyPosts';
+import React from 'react';
+import s from './ProfileInfo.module.css';
 
-const Profile = () => {
-    return ( <
-        div >
-        <
-        ProfileInfo / >
-        <
-        div >
-        <
-        img src = 'https://cdn.dribbble.com/users/103155/screenshots/2495359/hipsterova.jpg' > < /img> <
-        /div> <
-        MyPosts / >
-        <
-        /div>
+
+const ProfileInfo = () => {
+    return (
+        <div>
+            <div>
+                <img src='https://cdn.dribbble.com/users/103155/screenshots/2495359/hipsterova.jpg'  alt='some pictures from Internet'/>
+            </div>
+            <div className={s.descriptionBlock} >
+            </div>
+        </div>
     )
 };
 
-export default Profile;
+export default ProfileInfo;
