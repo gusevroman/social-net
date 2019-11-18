@@ -18,8 +18,8 @@ let state = {
             { id: 2, message: 'Bla-lallo' }
         ],
         dialogs: [
-            // { id: 0, name: 'Goooose', avatarImg: 'https://2.bp.blogspot.com/-RJysC3ecYlk/T_5a913d7XI/AAAAAAAAAtw/z-_ZOkNDtTQ/s1600/smiley03.jpg' },
-            { id: 0, name: 'Goooose', avatarImg: 'avatars.avatarImg0' },
+            { id: 0, name: 'Goooose', avatarImg: 'https://2.bp.blogspot.com/-RJysC3ecYlk/T_5a913d7XI/AAAAAAAAAtw/z-_ZOkNDtTQ/s1600/smiley03.jpg' },
+            // { id: 0, name: 'Goooose', avatarImg: 'avatars.avatarImg0' },
             { id: 1, name: 'Wolf', avatarImg: 'https://101clipart.com/wp-content/uploads/06/Basketball%20Player%20Dribbling%20Clipart%2028.jpg' },
             { id: 2, name: 'Martlet', avatarImg: 'https://s-media-cache-ak0.pinimg.com/236x/f1/dc/bd/f1dcbdb9b9fa390074856fb3b99e58bf.jpg' },
             { id: 4, name: 'Pepper', avatarImg: 'https://fscomps.fotosearch.com/compc/CSP/CSP715/basketball-player-cartoon-dribbling-clipart__k7153641.jpg' },
