@@ -27,7 +27,6 @@ const Dialogs = (props) => {
             <div className={s.dialogsItems}>
                 {dialogsElement}
             </div>
-
             <div className={s.messages}>
                 {messageElement}
             </div>
