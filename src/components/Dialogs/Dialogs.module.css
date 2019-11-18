@@ -5,6 +5,7 @@
 
 .dialog {
     color: brown;
+    text-decoration: none;
 }
 
 .active {
@@ -13,11 +14,13 @@
 
 .dialogsItems {
     padding: 10px;
-    color: blue;
+    color: green;
+    text-decoration: none;
 }
 
 .dialogsItems .active {
-    color: gold;
+    color: rgb(0, 255, 0);
+    text-decoration: none;
 }
 
 .messages {
@@ -26,4 +29,9 @@
 
 .messages .message {
     color: aqua;
+}
+
+.img img {
+    width: 20px;
+    border-radius: 10px;
 }

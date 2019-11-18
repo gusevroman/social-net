@@ -2,8 +2,13 @@
     color: rgb(43, 211, 28);
 }
 
+.item .likeCount {
+    color: goldenrod;
+    font-size: small;
+}
+
 .item img {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
 }

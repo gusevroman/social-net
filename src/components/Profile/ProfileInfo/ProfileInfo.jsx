@@ -11,10 +11,12 @@ const ProfileInfo = (props) => {
             <div className={s.img}>
                 <img src={imgSource} alt='some pictures from Internet' />
             </div>
-            {/* <div className={s.descriptionBlock} >
-            </div> */}
+            <div className={s.descriptionBlock} >
+            </div>
         </div>
     )
 };
 
 export default ProfileInfo;
+
+
