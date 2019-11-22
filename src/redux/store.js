@@ -1,3 +1,8 @@
+import profileReducer from "./profile-reducer"
+import dialogsReducer from "./dialogs-reducer"
+import sidebarReducer from "./sidebar-reducer"
+
+
 let store = {
 
     _state: {
@@ -13,7 +18,6 @@ let store = {
         },
 
         dialogsPage: {
-
             messages: [
                 { id: 0, message: 'How do you do' },
                 { id: 1, message: 'Hi' },
@@ -25,9 +29,10 @@ let store = {
                 { id: 2, name: 'Martlet', avatarImg: 'https://s-media-cache-ak0.pinimg.com/236x/f1/dc/bd/f1dcbdb9b9fa390074856fb3b99e58bf.jpg' },
                 { id: 4, name: 'Pepper', avatarImg: 'https://fscomps.fotosearch.com/compc/CSP/CSP715/basketball-player-cartoon-dribbling-clipart__k7153641.jpg' },
                 { id: 5, name: 'Squirrel', avatarImg: 'https://i.pinimg.com/originals/08/f5/8c/08f58c2995a7173033c38c2e58979c72.jpg' }
-            ]
+            ],
+            newMessageBody: 'Hello!'
         },
-
+        sidebar: {},
         avatars: [
             { avatarImg0: 'https://2.bp.blogspot.com/-RJysC3ecYlk/T_5a913d7XI/AAAAAAAAAtw/z-_ZOkNDtTQ/s1600/smiley03.jpg' },
             { avatarImg1: 'https://101clipart.com/wp-content/uploads/06/Basketball%20Player%20Dribbling%20Clipart%2028.jpg' },
@@ -36,35 +41,29 @@ let store = {
             { avatarImg4: 'https://i.pinimg.com/originals/08/f5/8c/08f58c2995a7173033c38c2e58979c72.jpg' }
         ]
     },
-
-    getState() {
-        return this._state
-    },
-
     _callSubscriber() {
         console.log('State changed')
     },
 
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likeCount: 0
-        }
-        this._state.profilePage.posts.push(newPost)
-        this._state.profilePage.newPostText = ''
-        this._callSubscriber(this._state)
-    },
 
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText
-        this._callSubscriber(this._state)
+    getState() {
+        return this._state
     },
-
     subscribe(observer) {
         this._callSubscriber = observer
+    },
+
+
+    dispatch(action) {
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action)
+
+        this._callSubscriber(this._state)
     }
 }
+
 
 
 export default store
@@ -88,4 +87,3 @@ window.store = store
 // https://i.pinimg.com/originals/08/f5/8c/08f58c2995a7173033c38c2e58979c72.jpg
 // http://clipart-library.com/images/BigAzMp8T.jpg
 // http://clipart-library.com/images/8TEK6xpTa.jpg
-

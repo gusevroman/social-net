@@ -1,35 +1,43 @@
 import React from 'react'
+import DialogItem from './DialogItem/DialogItem'
 import s from './Dialogs.module.css'
 import Message from './Message/Message'
-import DialogItem from './DialogItem/DialogItem'
+import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs-reducer'
 
 
 const Dialogs = (props) => {
 
-    let dialogsElement = props.state.dialogs.map(dialog => <DialogItem name={dialog.name}
+    let state = props.dialogsPage
+
+    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name}
         id={dialog.id} avatarImg={dialog.avatarImg} />)
 
-    let messageElement = props.state.messages.map(message => <Message message={message.message} />)
+    let messagesElements = state.messages.map(messageElem => <Message message={messageElem.message} />)
 
-    let newPostElement = React.createRef()
+    let newMessageBody = state.newMessageBody
 
-    let addPost = () => {
-        let addTextPost = newPostElement.current.value
-        alert('You added post: "' + addTextPost + '" , are you sure?')
+    let onSendMessageClick = () => {
+        props.sendMessage()
+    }
+
+    let onNewMessageChange = (event) => {
+        let body = event.target.value
+        props.updateNewMessageBody(body)
     }
 
     return (
-
         <div className={s.dialogs}>
-            <div>
-                <textarea ref={newPostElement}></textarea>
-                <button onClick={addPost}>Add post</button>
-            </div>
             <div className={s.dialogsItems}>
-                {dialogsElement}
+                {dialogsElements}
             </div>
             <div className={s.messages}>
-                {messageElement}
+                <div>{messagesElements}</div>
+                <div>
+                    <div><textarea value={newMessageBody}
+                        onChange={onNewMessageChange}
+                        placeholder='Enter your message'></textarea></div>
+                    <div><button onClick={onSendMessageClick}>Send</button></div>
+                </div>
             </div>
         </div>
     )
