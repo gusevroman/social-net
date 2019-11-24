@@ -10,7 +10,7 @@ let reducers = combineReducers({
     sidebar: sidebarReducer
 })
 
-let store = createStore(reducers)
+let store = createStore(reducers);
 
 
-export default store
+export default store;
