@@ -1,10 +1,15 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import Preloader from '../../common/Preloader/Preloader';
 
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
 
-    let imgSource = 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F1010079.jpg&f=1&nofb=1'
+    if (!props.profile) {
+        return <Preloader />
+    }
+
+    let imgSource = 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F1010079.jpg&f=1&nofb=1';
 
     return (
         <div>
@@ -12,12 +17,13 @@ const ProfileInfo = () => {
                 <img src={imgSource} alt='some pictures from Internet' />
             </div>
             <div className={s.descriptionBlock} >
+                <img src={props.profile.photos.large} />
                 ava + description
             </div>
         </div>
-    )
+    );
 }
 
-export default ProfileInfo
+export default ProfileInfo;
 
 
