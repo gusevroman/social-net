@@ -2,6 +2,9 @@ import React from 'react';
 import styles from './Users.module.css';
 import userPhoto from '../../assets/images/ball-user.jpg';
 import { NavLink } from 'react-router-dom';
+import * as axios from 'axios';
+import {usersAPI} from "../API/api";
+// import {toggleFollowingProgress} from "../../redux/users-reducer";
 
 
 let Users = (props) => {
@@ -32,12 +35,14 @@ let Users = (props) => {
                     </div>
                     <div>
                         {user.followed
-                            ? <button onClick={() => {
-                                props.unfollow(user.id)
-                            }}>Unfollow</button>
-                            : <button onClick={() => {
-                                props.follow(user.id)
-                            }}>Follow</button>}
+                            ? <button disabled={props.followingInProgress.some(id => id === user.id)}
+                                      onClick={() => { props.unfollow(user.id) }}>
+                                Unfollow</button>
+
+                            : <button disabled={props.followingInProgress.some(id => id === user.id)}
+                                      onClick={() => { props.follow(user.id) }}>
+                                Follow</button>
+                        }
                     </div>
                 </span>
                 <span>
@@ -52,7 +57,7 @@ let Users = (props) => {
                 </span>
             </div>)
         }
-    </div>
+    </div >
 }
 
 export default Users;

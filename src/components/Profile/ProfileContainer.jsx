@@ -1,9 +1,9 @@
-import Axios from 'axios';
 import React from 'react';
 import { connect } from 'react-redux';
-import { setUserProfile } from '../../redux/profile-reducer';
+import { getUserProfile } from '../../redux/profile-reducer';
 import Profile from './Profile';
 import { withRouter } from 'react-router-dom';
+
 
 class ProfileContainer extends React.Component {
 
@@ -12,10 +12,7 @@ class ProfileContainer extends React.Component {
         if (!userID) {
             userID = 1519
         }
-        Axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userID)
-            .then(response => {
-                this.props.setUserProfile(response.data);
-            });
+        this.props.getUserProfile(userID);
     }
 
     render() {
@@ -31,4 +28,4 @@ let mapStateToProps = (state) => ({
 
 let WithUrlDataContainerComponent = withRouter(ProfileContainer);
 
-export default connect(mapStateToProps, { setUserProfile })(WithUrlDataContainerComponent);
+export default connect(mapStateToProps, { getUserProfile })(WithUrlDataContainerComponent);
