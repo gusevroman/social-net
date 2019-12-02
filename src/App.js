@@ -7,6 +7,7 @@ import News from './components/News/News';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import LoginPage from "./components/Login/Login";
 
 
 const App = () => {
@@ -26,6 +27,9 @@ const App = () => {
                 />
                 <Route path='/news'
                        render={() => <News />}
+                />
+                <Route path='/login'
+                       render={() => <LoginPage />}
                 />
             </div>
         </div>
