@@ -1,5 +1,5 @@
 import Axios from "axios";
-import {usersAPI} from "../components/API/api";
+import {usersAPI} from "../API/api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';

@@ -1,4 +1,4 @@
-import {usersAPI} from "../components/API/api";
+import {usersAPI} from "../API/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
