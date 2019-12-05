@@ -29,8 +29,7 @@ let store = {
                 { id: 2, name: 'Martlet', avatarImg: 'https://s-media-cache-ak0.pinimg.com/236x/f1/dc/bd/f1dcbdb9b9fa390074856fb3b99e58bf.jpg' },
                 { id: 4, name: 'Pepper', avatarImg: 'https://fscomps.fotosearch.com/compc/CSP/CSP715/basketball-player-cartoon-dribbling-clipart__k7153641.jpg' },
                 { id: 5, name: 'Squirrel', avatarImg: 'https://i.pinimg.com/originals/08/f5/8c/08f58c2995a7173033c38c2e58979c72.jpg' }
-            ],
-            newMessageBody: 'Hello!'
+            ]
         },
         sidebar: {},
         avatars: [

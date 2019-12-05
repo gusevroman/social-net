@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './Users.module.css';
 import userPhoto from '../../assets/images/ball-user.jpg';
 import { NavLink } from 'react-router-dom';
-import * as axios from 'axios';
-import {usersAPI} from "../../API/api";
-// import {toggleFollowingProgress} from "../../redux/users-reducer";
+// import * as axios from 'axios';
+// import {usersAPI} from "../../API/api";
+// // import {toggleFollowingProgress} from "../../redux/users-reducer";
 
 
 let Users = (props) => {
@@ -18,7 +18,7 @@ let Users = (props) => {
         <div>
             {pages.map(page => {
                 return <span className={props.currentPage === page && styles.selectedPage}
-                    onClick={(event) => {
+                    onClick={() => {
                         props.onPageChanged(page)
                     }}> {page}</span>
             })}
