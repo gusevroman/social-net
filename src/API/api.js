@@ -20,7 +20,7 @@ export const usersAPI = {
     follow(userID) {
         return instance.post(`follow/${userID}`)
     },
-    unfollow(userID){
+    unfollow(userID) {
         return instance.delete(`follow/${userID}`)
     },
     getProfile(userID) {
@@ -37,12 +37,18 @@ export const profileAPI = {
         return instance.get(`profile/status/` + userID);
     },
     updateStatus(status) {
-        return instance.put(`profile/status/`, { status: status });
+        return instance.put(`profile/status/`, {status: status});
     }
 };
 
 export const authAPI = {
     me() {
-        return instance.get(`auth/me`, { withCredentials: true });
+        return instance.get(`auth/me`);
+    },
+    login(email, password, rememberMe=false) {
+        return instance.post(`auth/login`, {email, password, rememberMe});
+    },
+    logout() {
+        return instance.delete(`auth/login`);
     }
-}
+};

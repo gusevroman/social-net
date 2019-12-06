@@ -23,3 +23,4 @@ export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;
     return <FormCotrol {...props}><input {...input} {...restProps} /></FormCotrol>
 };
+
