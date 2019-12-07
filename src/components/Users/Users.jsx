@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Users.module.css';
 import userPhoto from '../../assets/images/ball-user.jpg';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 let Users = (props) => {
@@ -15,9 +15,9 @@ let Users = (props) => {
         <div>
             {pages.map(page => {
                 return <span className={props.currentPage === page && styles.selectedPage}
-                    onClick={() => {
-                        props.onPageChanged(page)
-                    }}> {page}</span>
+                             onClick={() => {
+                                 props.onPageChanged(page)
+                             }}> {page}</span>
             })}
         </div>
         {
@@ -27,17 +27,21 @@ let Users = (props) => {
                         <NavLink to={'/profile/' + user.id}>
                             <img src={user.photos.small != null
                                 ? user.photos.small
-                                : userPhoto} className={styles.userPhoto} />
+                                : userPhoto} className={styles.userPhoto}/>
                         </NavLink>
                     </div>
                     <div>
                         {user.followed
                             ? <button disabled={props.followingInProgress.some(id => id === user.id)}
-                                      onClick={() => { props.unfollow(user.id) }}>
+                                      onClick={() => {
+                                          props.unfollow(user.id)
+                                      }}>
                                 Unfollow</button>
 
                             : <button disabled={props.followingInProgress.some(id => id === user.id)}
-                                      onClick={() => { props.follow(user.id) }}>
+                                      onClick={() => {
+                                          props.follow(user.id)
+                                      }}>
                                 Follow</button>
                         }
                     </div>
@@ -54,7 +58,7 @@ let Users = (props) => {
                 </span>
             </div>)
         }
-    </div >
+    </div>
 }
 
 export default Users;
