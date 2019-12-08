@@ -1,3 +1,4 @@
+import React from "react";
 import * as axios from "axios";
 
 
@@ -5,7 +6,7 @@ const instance = axios.create({
     withCredentials: true,
     baseURL: "https://social-network.samuraijs.com/api/1.0/",
     headers: {
-        "API-KEY": "04d48590-fdcf-4be2-9071-775597fde248"
+        "API-KEY": "44e95469-7b49-49e0-9109-fe549e9dfa8c"
     }
 });
 
@@ -17,24 +18,24 @@ export const usersAPI = {
                 return response.data;
             });
     },
-    follow(userID) {
-        return instance.post(`follow/${userID}`)
+    follow(userId) {
+        return instance.post(`follow/${userId}`)
     },
-    unfollow(userID) {
-        return instance.delete(`follow/${userID}`)
+    unfollow(userId) {
+        return instance.delete(`follow/${userId}`)
     },
-    getProfile(userID) {
+    getProfile(userId) {
         console.warn('Obsolete method. Please profileAPI object.');
-        return profileAPI.getProfile(userID)
+        return profileAPI.getProfile(userId)
     }
 };
 
 export const profileAPI = {
-    getProfile(userID) {
-        return instance.get(`profile/` + userID);
+    getProfile(userId) {
+        return instance.get(`profile/` + userId);
     },
-    getStatus(userID) {
-        return instance.get(`profile/status/` + userID);
+    getStatus(userId) {
+        return instance.get(`profile/status/` + userId);
     },
     updateStatus(status) {
         return instance.put(`profile/status/`, {status: status});
